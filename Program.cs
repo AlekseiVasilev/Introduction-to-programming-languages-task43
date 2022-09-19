@@ -6,9 +6,9 @@
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
 Console.Clear();
-Console.WriteLine("\n Задача 43");
-Console.WriteLine("Нахождение точки пересечения прямых: y = k1 * x + b1 и y = k2 * x + b2");
-Console.WriteLine("Задайте константы b1, k1, b2, k2 через запятую:");
+Console.WriteLine("\n Задача 43"
++"\nНахождение точки пересечения прямых: y = k1 * x + b1 и y = k2 * x + b2"
++"\nЗадайте константы b1, k1, b2, k2 через запятую:");
 
 double[] numbers = StringToNum(Console.ReadLine());
 
