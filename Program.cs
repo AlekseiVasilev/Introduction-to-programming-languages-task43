@@ -60,7 +60,7 @@ double[] StringToNum(string input)
                 break;
             }
         }
-        numbers[index] = Convert.ToInt32(temp);
+        numbers[index] = Convert.ToDouble(temp);
         index++;
     }
     return numbers;
