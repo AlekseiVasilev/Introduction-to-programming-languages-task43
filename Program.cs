@@ -5,28 +5,104 @@
 
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
+// Console.Clear();
+// Console.WriteLine("\n Задача 43"
+// +"\nНахождение точки пересечения прямых: y = k1 * x + b1 и y = k2 * x + b2"
+// +"\nЗадайте константы b1, k1, b2, k2 через запятую:");
+
+// double[] numbers = StringToNum(Console.ReadLine());
+
+// PrintArray(numbers);
+// Console.WriteLine();
+
+
+// if (numbers.Length != 4)
+// {
+//     Console.WriteLine("Введено недопустимое значение, введите 4 натуральных числа через запятую");
+// }
+// else
+// {
+//     double x = 0;
+//     double y = 0;
+//     x = (numbers[2] - numbers[0]) / (numbers[1] - numbers[3]);
+//     y = numbers[1] * x + numbers[0];
+//     Console.WriteLine($"Точка пересечения ( {x} ; {y} )");
+// }
+
+// double[] StringToNum(string input)
+// {
+//     int count = 1;
+//     for (int i = 0; i < input.Length; i++)
+//     {
+//         if (input[i] == ',')
+//         {
+//             count++;
+//         }
+//     }
+
+//     double[] numbers = new double[count];
+//     int index = 0;
+
+//     for (int i = 0; i < input.Length; i++)
+//     {
+//         string temp = "";
+
+//         while (input[i] != ',')
+//         {
+//             if (i != input.Length - 1)
+//             {
+//                 temp = temp + input[i].ToString(); // x=x+y и х+=у
+//                 i++;
+//             }
+//             else
+//             {
+//                 temp += input[i].ToString();
+//                 break;
+//             }
+//         }
+//         numbers[index] = Convert.ToDouble(temp);
+//         index++;
+//     }
+//     return numbers;
+// }
+// void PrintArray(double[] array)
+// {
+//     Console.Write("[ ");
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (i != array.Length - 1) Console.Write($"{array[i]}, ");
+//         else Console.Write($"{array[i]}");
+//     }
+//     Console.Write(" ]");
+// }
+
+
 Console.Clear();
 Console.WriteLine("\n Задача 43"
-+"\nНахождение точки пересечения прямых: y = k1 * x + b1 и y = k2 * x + b2"
-+"\nЗадайте константы b1, k1, b2, k2 через запятую:");
++ "\nНахождение точки пересечения прямых: y = k1 * x + b1 и y = k2 * x + b2"
++ "\nЗадайте константы b1, k1, b2, k2 через запятую:");
 
-double[] numbers = StringToNum(Console.ReadLine());
+double[] numbers = GetStringToNum();
 
 PrintArray(numbers);
 Console.WriteLine();
 
-
-if (numbers.Length != 4)
+double[] GetStringToNum()
 {
-    Console.WriteLine("Введено недопустимое значение, введите 4 натуральных числа через запятую");
-}
-else
-{
-    double x = 0;
-    double y = 0;
-    x = (numbers[2] - numbers[0]) / (numbers[1] - numbers[3]);
-    y = numbers[1] * x + numbers[0];
-    Console.WriteLine($"Точка пересечения ( {x} ; {y} )");
+    double[] num = StringToNum(Console.ReadLine());
+    if (num.Length != 4)
+    {
+        Console.WriteLine("Введено недопустимое значение, введите 4 натуральных числа через запятую");
+    }
+    else
+    {
+        double x = 0;
+        double y = 0;
+        x = (num[2] - num[0]) / (num[1] - num[3]);
+        y = num[1] * x + num[0];
+        Console.WriteLine($"Точка пересечения ( {x} ; {y} )");
+    }
+    return num;
 }
 
 double[] StringToNum(string input)
@@ -40,7 +116,7 @@ double[] StringToNum(string input)
         }
     }
 
-    double[] numbers = new double[count];
+    double[] num = new double[count];
     int index = 0;
 
     for (int i = 0; i < input.Length; i++)
@@ -60,10 +136,10 @@ double[] StringToNum(string input)
                 break;
             }
         }
-        numbers[index] = Convert.ToDouble(temp);
+        num[index] = Convert.ToDouble(temp);
         index++;
     }
-    return numbers;
+    return num;
 }
 void PrintArray(double[] array)
 {
